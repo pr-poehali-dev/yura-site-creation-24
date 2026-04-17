@@ -1,7 +1,8 @@
 import { useState } from "react";
 import Icon from "@/components/ui/icon";
 
-const HERO_IMAGE = "https://cdn.poehali.dev/projects/414ad568-3573-4fb9-8b94-a3543b56ef88/files/aa3aa78a-4c1c-4a6c-83be-5a360a7cf4bc.jpg";
+const HERO_IMAGE = "https://cdn.poehali.dev/projects/414ad568-3573-4fb9-8b94-a3543b56ef88/bucket/ac5e1c7f-d83a-4b3d-b4f0-c0a1e205dd3d.jpg";
+const PRODUCT_IMAGE = "https://cdn.poehali.dev/projects/414ad568-3573-4fb9-8b94-a3543b56ef88/bucket/ac5e1c7f-d83a-4b3d-b4f0-c0a1e205dd3d.jpg";
 
 const NAV_ITEMS = [
   { id: "home", label: "Главная" },
@@ -14,48 +15,52 @@ const NAV_ITEMS = [
 
 const PRODUCTS = [
   {
-    name: "WP-1000 BASIC",
+    name: "СТ-1000 СТАРТ",
     size: "1000×1000 мм",
     load: "500 кг",
     price: "85 000",
     tag: "Старт",
-    desc: "Оптимальное решение для малых производств и мастерских",
+    desc: "Перфорированная поверхность, нижняя полка, колёсики. Идеален для мастерских и небольших производств.",
+    img: PRODUCT_IMAGE,
   },
   {
-    name: "WP-1500 PRO",
+    name: "СТ-1500 ПРОФИ",
     size: "1500×1000 мм",
     load: "800 кг",
     price: "145 000",
     tag: "Хит",
-    desc: "Профессиональная серия с расширенным набором крепёжных отверстий",
+    desc: "Шаг отверстий 50×50 мм, регулировка высоты, набор зажимов и магнитов в комплекте.",
+    img: PRODUCT_IMAGE,
   },
   {
-    name: "WP-2000 HEAVY",
+    name: "СТ-2000 ТЯЖЁЛЫЙ",
     size: "2000×1000 мм",
     load: "1200 кг",
     price: "210 000",
-    tag: "Для крупных задач",
-    desc: "Тяжёлая серия для промышленных объёмов и крупногабаритных изделий",
+    tag: "Производство",
+    desc: "Для промышленных объёмов. Усиленный каркас, сварные соединения, расширенный набор крепежа.",
+    img: PRODUCT_IMAGE,
   },
   {
-    name: "WP-3D MODULAR",
-    size: "Кастомный",
+    name: "СТ-3D МОДУЛЬНЫЙ",
+    size: "Под заказ",
     load: "2000 кг",
     price: "от 350 000",
     tag: "Premium",
-    desc: "Модульная система с 3D-позиционированием для сложных сборочных операций",
+    desc: "3D-позиционирование под любым углом. Угловые упоры, удлинители, индивидуальное оформление.",
+    img: PRODUCT_IMAGE,
   },
 ];
 
 const SPECS = [
-  { param: "Материал столешницы", value: "Конструкционная сталь Ст3, S235" },
+  { param: "Материал", value: "Высокопрочная конструкционная сталь" },
+  { param: "Поверхность", value: "Перфорированная, шаг отверстий 50×50 мм" },
   { param: "Диаметр отверстий", value: "Ø28 мм (стандарт), Ø16 мм (опция)" },
-  { param: "Шаг отверстий", value: "50×50 мм — точность ±0.1 мм" },
-  { param: "Толщина столешницы", value: "от 100 мм до 200 мм" },
-  { param: "Покрытие поверхности", value: "Антикоррозионная грунтовка + порошок" },
-  { param: "Стойки и регулировка", value: "Регулируемые от 750 до 950 мм" },
-  { param: "Стандарт отверстий", value: "DEMMELER, SIEGMUND совместимость" },
-  { param: "Твёрдость поверхности", value: "HRC 58–62 (закалённый вариант)" },
+  { param: "Регулировка высоты", value: "750–950 мм (опционально)" },
+  { param: "Мобильность", value: "Колёсики для перемещения по цеху" },
+  { param: "Нижняя полка", value: "Перфорированная, для хранения инструмента" },
+  { param: "Соединения каркаса", value: "Сварные — максимальная жёсткость" },
+  { param: "Стандарт совместимости", value: "DEMMELER, SIEGMUND, STRONG HAND" },
   { param: "Плоскостность", value: "±0.05 мм на 1000 мм длины" },
   { param: "Гарантия", value: "5 лет на столешницу, 2 года на аксессуары" },
 ];
@@ -232,13 +237,14 @@ export default function Index() {
                 Точность —<br /><span className="text-[hsl(var(--orange))]">наш стандарт</span>
               </h2>
               <p className="font-ibm text-[hsl(var(--chrome))] leading-relaxed mb-6">
-                С 2012 года WELDPRO 3D производит профессиональные сварочные столы для машиностроения,
-                авиационной промышленности, автомобилестроения и судостроения. Каждый стол проходит
-                контроль плоскостности на координатно-измерительных машинах.
+                Наши 3D сварочные столы — инновационное решение, которое значительно упрощает
+                процесс сварки и сборки металлоконструкций. Система крепления с трёхмерной
+                регулировкой позволяет фиксировать детали под любым углом и в любом положении.
               </p>
               <p className="font-ibm text-[hsl(var(--chrome))] leading-relaxed mb-8">
-                Собственный конструкторский отдел позволяет выпускать столы под индивидуальные
-                технические задания в срок от 10 рабочих дней.
+                Столы применяются в автомобильной промышленности, металлоконструкциях, судостроении
+                и авиастроении. Предлагаем индивидуальный подход: разработка решений под конкретные
+                задачи клиента в срок от 10 рабочих дней.
               </p>
               <div className="grid grid-cols-2 gap-3">
                 {[
@@ -257,10 +263,10 @@ export default function Index() {
 
             <div className="space-y-3">
               {[
-                { num: "01", title: "Проектирование", desc: "Разрабатываем 3D-модель под ваши задачи и производственные условия" },
-                { num: "02", title: "Производство", desc: "Изготавливаем из конструкционной стали с термообработкой поверхности" },
-                { num: "03", title: "Контроль качества", desc: "Измеряем плоскостность на КИМ, проверяем каждое отверстие" },
-                { num: "04", title: "Поставка", desc: "Доставляем в защитной упаковке с монтажом на объекте" },
+                { num: "01", title: "Автомобильная пром.", desc: "Сборка кузовных элементов, рам, кронштейнов под точные допуски" },
+                { num: "02", title: "Металлоконструкции", desc: "Лестницы, ограждения, каркасы зданий — любая геометрия" },
+                { num: "03", title: "Судостроение", desc: "Создание корпусов судов и морских платформ в жёстком позиционировании" },
+                { num: "04", title: "Авиастроение", desc: "Сборка фюзеляжей и крыльев с максимальной точностью ±0.05 мм" },
               ].map((step) => (
                 <div key={step.num} className="flex gap-4 p-4 bg-background/50 border border-border hover:border-[hsl(var(--orange))/50] transition-colors">
                   <div className="font-oswald text-3xl font-bold text-[hsl(var(--orange))/30] flex-shrink-0 w-12">{step.num}</div>
@@ -286,16 +292,25 @@ export default function Index() {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {PRODUCTS.map((p) => (
-              <div key={p.name} className="border border-border hover:border-[hsl(var(--orange))] transition-all duration-300 group bg-[hsl(var(--card))]">
-                <div className="p-5">
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="font-ibm text-xs px-2 py-1 bg-[hsl(var(--orange))/15] text-[hsl(var(--orange))] border border-[hsl(var(--orange))/30] uppercase tracking-wider">
-                      {p.tag}
-                    </span>
-                    <Icon name="Grid3x3" size={16} className="text-[hsl(var(--muted-foreground))] group-hover:text-[hsl(var(--orange))] transition-colors" />
+              <div key={p.name} className="border border-border hover:border-[hsl(var(--orange))] transition-all duration-300 group bg-[hsl(var(--card))] flex flex-col">
+                {/* Product photo */}
+                <div className="relative overflow-hidden bg-[hsl(var(--secondary))] h-44">
+                  <img
+                    src={p.img}
+                    alt={p.name}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--card))] to-transparent opacity-60" />
+                  <span className="absolute top-3 left-3 font-ibm text-xs px-2 py-1 bg-[hsl(var(--orange))] text-white uppercase tracking-wider">
+                    {p.tag}
+                  </span>
+                </div>
+                <div className="p-5 flex flex-col flex-1">
+                  <div className="flex items-center justify-between mb-3">
+                    <h3 className="font-oswald text-xl font-bold uppercase">{p.name}</h3>
+                    <Icon name="Grid3x3" size={16} className="text-[hsl(var(--muted-foreground))] group-hover:text-[hsl(var(--orange))] transition-colors flex-shrink-0" />
                   </div>
-                  <h3 className="font-oswald text-xl font-bold uppercase mb-1">{p.name}</h3>
-                  <p className="font-ibm text-xs text-[hsl(var(--muted-foreground))] mb-4 leading-relaxed">{p.desc}</p>
+                  <p className="font-ibm text-xs text-[hsl(var(--muted-foreground))] mb-4 leading-relaxed flex-1">{p.desc}</p>
                   <div className="space-y-2 mb-4">
                     <div className="flex justify-between">
                       <span className="font-ibm text-xs text-[hsl(var(--muted-foreground))] uppercase tracking-wider">Размер</span>
@@ -597,6 +612,46 @@ export default function Index() {
                 <p className="font-ibm text-sm text-[hsl(var(--chrome))] leading-relaxed">{item.desc}</p>
               </div>
             ))}
+          </div>
+
+          {/* Комплектация */}
+          <div className="grid lg:grid-cols-2 gap-4 mb-6">
+            <div className="border border-border">
+              <div className="bg-[hsl(var(--secondary))] px-5 py-3 border-b border-[hsl(var(--orange))]">
+                <span className="font-oswald text-sm uppercase tracking-widest">Стандартная комплектация</span>
+              </div>
+              <div className="p-5 space-y-2">
+                {[
+                  "Основной рабочий стол с перфорацией",
+                  "Нижняя полка для хранения инструмента",
+                  "Набор магнитов и зажимов для крепежа",
+                  "Колёсики для мобильности по цеху",
+                ].map((item) => (
+                  <div key={item} className="flex items-center gap-3">
+                    <Icon name="CheckCircle" size={14} className="text-[hsl(var(--orange))] flex-shrink-0" />
+                    <span className="font-ibm text-sm text-[hsl(var(--chrome))]">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="border border-border">
+              <div className="bg-[hsl(var(--secondary))] px-5 py-3 border-b border-border">
+                <span className="font-oswald text-sm uppercase tracking-widest">Дополнительно под заказ</span>
+              </div>
+              <div className="p-5 space-y-2">
+                {[
+                  "Специальные угловые упоры",
+                  "Удлинители рабочего пространства",
+                  "Регулировка высоты 750–950 мм",
+                  "Индивидуальное оформление под ваши требования",
+                ].map((item) => (
+                  <div key={item} className="flex items-center gap-3">
+                    <Icon name="Plus" size={14} className="text-[hsl(var(--muted-foreground))] flex-shrink-0" />
+                    <span className="font-ibm text-sm text-[hsl(var(--chrome))]">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
 
           <div className="border border-border overflow-hidden">
